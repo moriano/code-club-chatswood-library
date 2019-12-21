@@ -1,0 +1,344 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Week 2: Conditionals.\n",
+    "\n",
+    "## So far we have only been able to execute statements that always did the same thing. \n",
+    "\n",
+    "## Although powerful, that programming approach is very limited.\n",
+    "\n",
+    "## Today we will introduce conditionals.\n",
+    "\n",
+    "## Consider a statement like this\n",
+    "\n",
+    "> ### If the price is 50\\$ or less buy the product.\n",
+    "\n",
+    "## IN python this would look like this\n",
+    "\n",
+    "```python\n",
+    "if price <= 50:\n",
+    "    buy_product = True\n",
+    "```    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## The syntax is simple\n",
+    "\n",
+    "```python\n",
+    "if condition:\n",
+    "    statement1\n",
+    "    statement2\n",
+    "    .\n",
+    "    .\n",
+    "    .\n",
+    "statement3\n",
+    "statement4\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## In the code above we will execute `statement1` and `statement2` if and only if `condition` is True. Statements `statement3` and `statement4` will always be executed\n",
+    "\n",
+    "## Let's try this with an example\n",
+    "\n",
+    "```python\n",
+    "\n",
+    "price = 50\n",
+    "\n",
+    "if price <= 50:\n",
+    "    print(f\"Price is smaller than {price}\")\n",
+    "\n",
+    "print(\"This line will always be printed\")\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Execute the code from above, try modifyin the value of variable \"price\"\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## An if statement can contain multiple statements inside.\n",
+    "```python\n",
+    "\n",
+    "price = 50\n",
+    "\n",
+    "if price <= 50:\n",
+    "    print(f\"Price is smaller than {price}\")\n",
+    "    print(\"That is a cheap price indeed\")\n",
+    "    print(\"I can keep adding more statements here!\")\n",
+    "\n",
+    "print(\"This line will always be printed\")\n",
+    "```\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Execute the code from above... can you guess what it will print before you execute it?\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## A word of warning: Remember, computers need to be tell exactly what to do, if you forget something, they will fail. As an example try to execute this code.\n",
+    "\n",
+    "```python\n",
+    "\n",
+    "price = 50\n",
+    "\n",
+    "if price <= 50\n",
+    "    print(f\"Price is smaller than {price}\")\n",
+    "\n",
+    "print(\"This line will always be printed\")\n",
+    "```\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Execute the code from above, it WILL fail, read the error message... can you explain why it fails?\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## A conditional can also include an `else` clause. For example imagine this statement.\n",
+    "> ### If the cost is less than 75$ then the product is cheap, otherwise it is expensive\n",
+    "\n",
+    "```python\n",
+    "cost = 100\n",
+    "if cost <= 75:\n",
+    "    print(\"The product is cheap\")\n",
+    "else:\n",
+    "    print(\"The product is expensive\")\n",
+    "```    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Execute the code from above, try to modify the value of variable cost and see what happens.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Conditionals can also check multiple situations, consider a statement like this\n",
+    "\n",
+    "> ## If the product is 50\\\\$ or less is very cheap, if it is between 51\\\\$ and 75\\\\$ it hasa normal price. More than 75\\\\$ indicates that the product is too expensive\n",
+    "\n",
+    "```python\n",
+    "\n",
+    "price = 65\n",
+    "if price <= 50:\n",
+    "    print(\"Product is very cheap\")\n",
+    "elif price >= 51 and price <= 75:\n",
+    "    print(\"Product has a normal price\")\n",
+    "elif price > 75:\n",
+    "    print(\"Product is expensive\")\n",
+    "```    \n",
+    "\n",
+    "### Notice the statement `price >= 51 and price <= 75` can you guess what it does?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Execute the code from above, modify the price variable and see if you can execute different conditionals\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## The full syntax for the \"if\" statement is\n",
+    "\n",
+    "```python\n",
+    "\n",
+    "if condition_1:\n",
+    "    statement_1\n",
+    "elif condition_2:\n",
+    "    statement_2\n",
+    "elif condition_N:\n",
+    "    statement_N\n",
+    "else:\n",
+    "    final_statement\n",
+    "```\n",
+    "\n",
+    "\n",
+    "### Exercise: Code the following algorithm. Imagine you have a variable named \"temperature\" Write code that will do the following.\n",
+    "\n",
+    "1. If the temperature is less than 0 degrees, print \"Too cold!\"\n",
+    "2. If the temperature is between 0 and 15 degrees, print \"Cold\"\n",
+    "3. If the temperature is between 16 and 25 degrees, print \"Normal\"\n",
+    "4. If the temperature is over 25 degrees, print \"Warm\"\n",
+    "\n",
+    "### To help you get started, remember you need to define a variable named \"temperature\"\n",
+    "\n",
+    "```python\n",
+    "\n",
+    "temperature = 27\n",
+    "\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Write the code here\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## More details on if statements. What if we want to check the a variable `price` is equal to 50?\n",
+    "\n",
+    "```python\n",
+    "price = 50\n",
+    "if price = 50:\n",
+    "    print(\"Price is 50\")\n",
+    "```    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Before you execute the code from above, can you guess what it does?\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Golden rule of programming: the operator `=` is used to assign a value to a variable, not to compare.\n",
+    "\n",
+    "## This is different to regular mathematics... but it is how almost every programming language works.\n",
+    "\n",
+    "## The way we compare two values in python is using `==` yes, that's TWO equal symbols together. That works for any type of variable: Numbers, strings and booleans.\n",
+    "\n",
+    "## Now you can fix the code\n",
+    "\n",
+    "```python\n",
+    "price = 50\n",
+    "if price = 50:\n",
+    "    print(\"Price is 50\")\n",
+    "```    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Copy the code from above, fix it so that it prints \"Price is 50\"\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## If statements can contain multiple conditions like \"or\", \"and\"\n",
+    "\n",
+    "## Example, lets imagine we have the following code\n",
+    "\n",
+    "```python\n",
+    "\n",
+    "name_1 = \"John\"\n",
+    "age_1 = 27\n",
+    "name_2 = \"Mary\"\n",
+    "age_2 = 47\n",
+    "\n",
+    "if name_1 == \"John\" and age_2 < 40:\n",
+    "    print(\"Statement 1\")\n",
+    "elif name_2 == \"John\" and age_1 == 27:\n",
+    "    print(\"Statement 2\")\n",
+    "elif name_2 == \"Mary\" and age_2 > 37:\n",
+    "    print(\"Statement 3\")\n",
+    "else:\n",
+    "    print(\"Statement 4\")\n",
+    "```   \n",
+    "\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Copy the code from above, can you guess what it will print BEFORE you execute?\n",
+    "# Once you have executed it, can you manipulate the variable values so that \"Statement 1\" is printed\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
