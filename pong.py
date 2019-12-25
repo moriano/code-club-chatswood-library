@@ -8,9 +8,9 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
 
-
 class Ball(pygame.sprite.Sprite):
-    #This class represents a car. It derives from the "Sprite" class in Pygame.
+
+    # This class represents a car. It derives from the "Sprite" class in Pygame.
 
     def __init__(self, color, width, height):
         # Call the parent class (Sprite) constructor
@@ -35,8 +35,9 @@ class Ball(pygame.sprite.Sprite):
         self.rect.y += self.velocity[1]
 
     def bounce(self):
-        self.velocity[0] = -self.velocity[0]
+        self.velocity[0] = -self.velocity[0] * 1.2
         self.velocity[1] = randint(-8,8)
+
 
 class Paddle(pygame.sprite.Sprite):
 
@@ -60,13 +61,13 @@ class Paddle(pygame.sprite.Sprite):
 
     def moveUp(self, pixels):
         self.rect.y -= pixels
-        #Check that you are not going too far (off the screen)
+        # Check that you are not going too far (off the screen)
         if self.rect.y < 0:
             self.rect.y = 0
 
     def moveDown(self, pixels):
         self.rect.y += pixels
-        #Check that you are not going too far (off the screen)
+        # Check that you are not going too far (off the screen)
         if self.rect.y > 400:
             self.rect.y = 400
 
@@ -76,11 +77,11 @@ size = (700, 500)
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("Pong")
 
-paddleA = Paddle(WHITE, 10, 100)
+paddleA = Paddle(WHITE, 10, 120)
 paddleA.rect.x = 20
 paddleA.rect.y = 200
 
-paddleB = Paddle(WHITE, 10, 100)
+paddleB = Paddle(WHITE, 10, 120)
 paddleB.rect.x = 670
 paddleB.rect.y = 200
 
@@ -114,15 +115,15 @@ while carryOn:
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_w]:
-        paddleA.moveUp(5)
+        paddleA.moveUp(10)
     if keys[pygame.K_s]:
-        paddleA.moveDown(5)
+        paddleA.moveDown(10)
     if keys[pygame.K_UP]:
-        paddleB.moveUp(5)
+        paddleB.moveUp(10)
     if keys[pygame.K_DOWN]:
-        paddleB.moveDown(5)
+        paddleB.moveDown(10)
 
-        # --- Game logic should go here
+    # --- Game logic should go here
     all_sprites_list.update()
 
     #Check if the ball is bouncing against any of the 4 walls:
